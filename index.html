@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Premium Access</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; 
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff; 
+            display: flex; 
+            justify-content: center; 
+            min-height: 100vh; 
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-wrapper { 
+            width: 100%; 
+            max-width: 420px; 
+            padding: 25px 20px; 
+            text-align: center; 
+        }
+        
+        .lottie-logo { width: 110px !important; height: 110px !important; margin: 0 auto 5px auto; }
+        
+        h1 { font-size: 22px; margin: 0 0 5px 0; font-weight: 700; }
+        p { color: #cfcfcf; font-size: 13px; margin: 0 0 20px 0; }
+
+        .slider-container { 
+            width: 100%; 
+            margin-bottom: 20px; 
+            background: rgba(255, 255, 255, 0.08); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            border-radius: 20px; 
+            padding: 15px; 
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        .feature-card { display: none; }
+        .feature-card.active { display: block; animation: fadeIn 0.5s; }
+        .feature-image { width: 100%; height: auto; border-radius: 12px; margin-bottom: 12px; display: block; border: 1px solid rgba(255,255,255,0.1); }
+        .feature-card strong { font-size: 14px; letter-spacing: 0.5px; }
+
+        .cta-button { 
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); 
+            color: #ffffff; 
+            padding: 16px; 
+            border-radius: 14px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            display: block; 
+            font-size: 15px; 
+            margin-bottom: 15px;
+            box-shadow: 0 6px 20px rgba(37, 117, 252, 0.4);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Notice tanpa blok latar */
+        .verification-notice { 
+            font-size: 12px; 
+            color: #999; 
+            line-height: 1.4; 
+            padding: 0 5px; 
+            margin-top: 15px;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+    <lottie-player 
+        src="robot-with-ai-cloud-and-code-window-illustration-2025-10-20-03-06-07-utc.json" 
+        class="lottie-logo"
+        background="transparent" 
+        speed="1" 
+        loop 
+        autoplay>
+    </lottie-player>
+    
+    <h1>Unlock Pro Features</h1>
+    <p>Complete verification to activate premium access.</p>
+    
+    <div class="slider-container" id="slider">
+        <div class="feature-card active">
+            <img src="feature1.png" alt="Feature" class="feature-image">
+            <strong>Unlimited GPT-4 Access</strong>
+        </div>
+        <div class="feature-card">
+            <img src="feature2.png" alt="Feature" class="feature-image">
+            <strong>Advanced Data Analysis</strong>
+        </div>
+        <div class="feature-card">
+            <img src="feature3.png" alt="Feature" class="feature-image">
+            <strong>High-Speed Processing</strong>
+        </div>
+    </div>
+    
+    <a href="https://www.cdndn.com/unlock/HC9wqV" class="cta-button">CONTINUE TO ACCESS</a>
+    
+    <div class="verification-notice">
+        <span style="font-size: 20px;">⚠️</span><br>
+        <b style="color: #ffc107; text-transform: uppercase;">Requirement:</b><br>
+        You are required to <b>complete one short verification task</b> from our sponsors to unlock your premium access.
+    </div>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.feature-card');
+    function showSlides() {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+        setTimeout(showSlides, 3500);
+    }
+    showSlides();
+</script>
+
+</body>
+</html>
